@@ -15,6 +15,5 @@ public class AppTest {
 	@Test
 	public void shouldReturnTrue() {
 		assertThat(true, equalTo(true));
-		
 	}
 }

@@ -31,6 +31,11 @@
             <artifactId>guava</artifactId>
             <version>10.0.1</version>
         </dependency>
+<dependency>
+    <groupId>org.seleniumhq.selenium.core</groupId>
+    <artifactId>selenium-core</artifactId>
+    <version>1.0.1</version>
+</dependency>
 
   </dependencies>
 </project>
