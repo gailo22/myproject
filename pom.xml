@@ -52,14 +52,19 @@
 			<version>3.0.5.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>org.opensymphony.quartz</groupId>
-			<artifactId>quartz</artifactId>
-			<version>1.6.1</version>
-		</dependency>
-		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
 			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.6.4</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -76,6 +81,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
+					<downloadSources>true</downloadSources>
 					<verbose>true</verbose>
 					<fork>true</fork>
 					<executable>C:\Program Files\Java\jdk1.6.0_07\bin\javac.exe
