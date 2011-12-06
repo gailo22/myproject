@@ -13,7 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.ws.rs.core.MediaType;
+
 import org.junit.Test;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
 
 /**
  * Unit test for simple App.
@@ -65,6 +70,11 @@ public class AppTest {
 		List<String> arrayList = new ArrayList<String>();
 		
 		Set<String> hashSet = new HashSet<String>();
+		
+		Client client = Client.create();
+		WebResource resource = client.resource("http://www.google.com");
+		String string2 = resource.accept(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_XML).get(String.class);
+		System.out.println(string2);
 		
 	}
 }
