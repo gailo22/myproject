@@ -1,8 +1,10 @@
 package myproject;
 
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +27,10 @@ public class AppTest {
 	public void shouldReturnTrue() {
 		System.out.println("testtest");
 		assertThat(true, equalTo(true));
+		assertThat(false, equalTo(false));
+		assertThat(true, equalTo(true));
+		Map<String,String> hashMap = new HashMap<String, String>();
+		hashMap.containsKey("abc");
 		System.out.println(getString());
 		System.out.println(getString());
 	}
@@ -33,6 +39,10 @@ public class AppTest {
 		// TODO Auto-generated method stub
 		assertEquals(true, true);
 		assertEquals(false, false);
+		assertEquals(true, true);
+		assertTrue(true);
+		assertFalse(false);
+		assertEquals(true, true);
 		return STRING;
 	}
 	
