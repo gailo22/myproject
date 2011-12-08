@@ -1,9 +1,5 @@
 package myproject;
 
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -37,8 +33,4 @@ public class App {
 		System.out.println(multiMap.asMap());
 	}
 	
-	@Test
-	public void test3() {
-		assertThat(true, equalTo(true));
-	}
 }
