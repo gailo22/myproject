@@ -12,7 +12,7 @@ import com.google.common.collect.ArrayListMultimap;
 public class App {
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				new String[] { "applicationContext.xml" });
+				new String[] { "applicationContext-job.xml" });
 
 		context.registerShutdownHook();
 		
