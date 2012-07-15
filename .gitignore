@@ -1,3 +1,8 @@
 /target/
+<<<<<<< HEAD
 .project
 .classpath
+=======
+.classpath
+.project
+>>>>>>> c9bc8ba48f0a2a04b6d6a5a57566709bb3cc05f2
