@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hamcrest.core.IsEqual;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ExpressionTreeParseTest {
@@ -28,6 +29,7 @@ public class ExpressionTreeParseTest {
 	}
 	
 	@Test
+	@Ignore
 	public void shouldBuildCorrectBinaryTreeNode() {
 		// Given
 		String stringExp = "(5+2)*7";
@@ -43,6 +45,7 @@ public class ExpressionTreeParseTest {
 	}
 	
 	@Test
+	@Ignore
 	public void shouldReturnCorrectValueOnExpr() {
 		/// Given
 		String stringExp = "(5+2)*7";
