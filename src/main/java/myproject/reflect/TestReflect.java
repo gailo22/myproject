@@ -16,6 +16,16 @@ public class TestReflect {
 		setProxy.add("abc");
 		setProxy.isEmpty();
 
+		new TestReflect().mehtodA();
+
+	}
+
+	public void mehtodA() {
+		methodName();
+	}
+
+	public static String methodName() {
+		return Thread.currentThread().getStackTrace()[1].getMethodName();
 	}
 
 }

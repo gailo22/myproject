@@ -1,11 +1,5 @@
 package myproject;
 
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,6 +13,13 @@ import org.junit.Test;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
+
+import static org.hamcrest.core.IsEqual.equalTo;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -76,5 +77,14 @@ public class AppTest {
 		String string2 = resource.accept(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_XML).get(String.class);
 		System.out.println(string2);
 		
+	}
+
+	@Test
+	public void test() {
+		List<String> l = null;
+		if (l == null || l.isEmpty()) {
+			System.out.println("null or empty list");
+		}
+
 	}
 }
