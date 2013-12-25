@@ -87,4 +87,14 @@ public class AppTest {
 		}
 
 	}
+
+	@Test
+	public void testSubstring() {
+		String str = "1;jsessionid=1233433";
+		int indexOf = str.indexOf(";jsessionid");
+		if (indexOf != -1) {
+			System.out.println(str.substring(0, indexOf));
+		}
+	}
+
 }
