@@ -2,8 +2,20 @@ package myproject.mupl;
 
 public class Int extends Exp {
 	
-	Int(Exp exp) {
-		
+	int i;
+
+	Int(int i) {
+		this.i = i;
+	}
+
+	@Override
+	void preProcess() {
+
+	}
+
+	@Override
+	int eval() {
+		return i;
 	}
 
 }

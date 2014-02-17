@@ -12,6 +12,18 @@ public class Var extends Exp {
 	public String toString() {
 		return String.valueOf(i);
 	}
+
+	@Override
+	void preProcess() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	int eval() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 
