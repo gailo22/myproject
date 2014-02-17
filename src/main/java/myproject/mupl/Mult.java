@@ -2,13 +2,13 @@ package myproject.mupl;
 
 public class Mult extends Exp {
 
-	Exp l;
+	Exp e1;
 
-	Exp r;
+	Exp e2;
 
-	Mult(Exp l, Exp r) {
-		this.l = l;
-		this.r = r;
+	Mult(Exp e1, Exp e2) {
+		this.e1 = e1;
+		this.e2 = e2;
 	}
 
 	@Override
@@ -17,8 +17,8 @@ public class Mult extends Exp {
 	}
 
 	@Override
-	int eval() {
-		return l.eval() * r.eval();
+	ExpValue eval() {
+		return e1.eval().mult(e2);
 	}
 
 

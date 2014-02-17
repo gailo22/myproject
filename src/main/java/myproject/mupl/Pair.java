@@ -2,31 +2,30 @@ package myproject.mupl;
 
 public class Pair extends Exp {
 
-	Exp first;
+	Exp f;
 
-	Exp second;
+	Exp s;
 
-	Pair(Exp first, Exp second) {
-		this.first = first;
-		this.second = second;
+	Pair(Exp f, Exp s) {
+		this.f = f;
+		this.s = s;
 	}
 
-	public Exp getFirst() {
-		return first;
+	public Exp getF() {
+		return f;
 	}
 
-	public Exp getSecond() {
-		return second;
+	public Exp getS() {
+		return s;
 	}
 
 	@Override
 	void preProcess() {
-
 	}
 
 	@Override
-	int eval() {
-		return 0;
+	ExpValue eval() {
+		return null;
 	}
 
 }

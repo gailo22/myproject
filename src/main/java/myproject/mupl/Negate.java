@@ -14,8 +14,8 @@ public class Negate extends Exp {
 	}
 
 	@Override
-	int eval() {
-		return e.eval() * -1;
+	ExpValue eval() {
+		return e.eval().negate();
 	}
 
 }

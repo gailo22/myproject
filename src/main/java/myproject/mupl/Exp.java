@@ -4,7 +4,6 @@ public abstract class Exp {
 	
 	abstract void preProcess();
 
-	abstract int eval();
-	
+	abstract ExpValue eval();
 
 }

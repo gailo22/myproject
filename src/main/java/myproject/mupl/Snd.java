@@ -13,12 +13,12 @@ public class Snd extends Exp {
 	}
 
 	@Override
-	int eval() {
+	ExpValue eval() {
 		if (e instanceof Pair) {
 			Pair p = (Pair) e;
-			return p.getSecond().eval();
+			return p.getS().eval();
 		} else {
-			throw new IllegalArgumentException("fst applied to non-apair!");
+			throw new IllegalArgumentException("snd applied to non-apair!");
 		}
 	}
 }

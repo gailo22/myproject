@@ -13,10 +13,10 @@ public class Fst extends Exp {
 	}
 
 	@Override
-	int eval() {
+	ExpValue eval() {
 		if (e instanceof Pair) {
 			Pair p = (Pair) e;
-			return p.getFirst().eval();
+			return p.getF().eval();
 		} else {
 			throw new IllegalArgumentException("fst applied to non-apair!");
 		}

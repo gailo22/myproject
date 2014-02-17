@@ -9,15 +9,15 @@ public class MUPLTest {
 		Negate negate = new Negate(mult);
 
 		Pair p = new Pair(new Int(5), new Int(6));
-		Fst first = new Fst(p);
-		Snd second = new Snd(p);
+		Fst f = new Fst(p);
+		Snd s = new Snd(p);
 
 		System.out.println(add.eval());
 		System.out.println(mult.eval());
 		System.out.println(negate.eval());
 
-		System.out.println(first.eval());
-		System.out.println(second.eval());
+		System.out.println(f.eval());
+		System.out.println(s.eval());
 
 	}
 

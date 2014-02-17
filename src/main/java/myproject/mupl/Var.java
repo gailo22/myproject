@@ -20,9 +20,9 @@ public class Var extends Exp {
 	}
 
 	@Override
-	int eval() {
+	ExpValue eval() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 	
 	

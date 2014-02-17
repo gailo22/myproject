@@ -2,13 +2,13 @@ package myproject.mupl;
 
 public class Add extends Exp {
 	
-	Exp l;
+	Exp e1;
 	
-	Exp r;
+	Exp e2;
 	
-	Add(Exp l, Exp r) {
-		this.l = l;
-		this.r = r;
+	Add(Exp e1, Exp e2) {
+		this.e1 = e1;
+		this.e2 = e2;
 	}
 
 	@Override
@@ -17,8 +17,8 @@ public class Add extends Exp {
 	}
 
 	@Override
-	int eval() {
-		return l.eval() + r.eval();
+	ExpValue eval() {
+		return e1.eval().add(e2);
 	}
 
 }
