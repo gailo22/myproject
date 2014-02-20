@@ -5,6 +5,8 @@ import java.util.StringTokenizer;
 
 public class InfixToPostfixTest {
 
+	private static final String OPERATORS = "+-*/^";
+
 	public static void main(String[] args) {
 
 		String str = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
@@ -19,7 +21,7 @@ public class InfixToPostfixTest {
 		while (tokenizer.hasMoreTokens()) {
 			String nextToken = tokenizer.nextToken();
 			if (isOperator(nextToken)) {
-				int precedence = checkPrecedence(nextToken);
+				int precedence = getPrecedence(nextToken);
 				if (precedence > currentprecedence || !isLeftAssociativity(nextToken)) {
 					opStack.push(nextToken);
 				} else {
@@ -30,17 +32,17 @@ public class InfixToPostfixTest {
 
 				currentprecedence = precedence;
 
-			} else if ("(".equals(nextToken)) {
+			} else if (isOpenBracket(nextToken)) {
 				opStack.push(nextToken);
 				currentprecedence = 0;
-			} else if (")".equals(nextToken)) {
+			} else if (isCloseBracket(nextToken)) {
 				String op = opStack.pop();
 				outputStr.append(op + " ");
 
 				// Repeated until "(" found
-				while (!"(".equals(op)) {
+				while (!isOpenBracket(op)) {
 					op = opStack.pop();
-					if (!"(".equals(op)) {
+					if (!isOpenBracket(op)) {
 						outputStr.append(op + " ");
 					}
 				}
@@ -59,12 +61,19 @@ public class InfixToPostfixTest {
 
 	}
 
-	private static boolean isOperator(String nextToken) {
-		return "+".equals(nextToken) || "-".equals(nextToken) || "*".equals(nextToken) || "/".equals(nextToken)
-				|| "^".equals(nextToken);
+	private static boolean isCloseBracket(String nextToken) {
+		return ")".equals(nextToken);
 	}
 
-	private static int checkPrecedence(String nextToken) {
+	private static boolean isOpenBracket(String nextToken) {
+		return "(".equals(nextToken);
+	}
+
+	private static boolean isOperator(String nextToken) {
+		return OPERATORS.contains(nextToken);
+	}
+
+	private static int getPrecedence(String nextToken) {
 		if ("^".equals(nextToken)) {
 			return 4;
 		} else if ("*".equals(nextToken) || "/".equals(nextToken)) {
