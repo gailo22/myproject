@@ -22,7 +22,7 @@ public class BubbleSort {
 		int n = ints.size();
 
 		for (int i = 1; i < n; i++) {
-			for (int j = 0; j < n - 1; j++) {
+			for (int j = 0; j < n - i; j++) {
 
 				Integer a = ints.get(j);
 				Integer b = ints.get(j + 1);
