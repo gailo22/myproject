@@ -1,6 +1,11 @@
 package myproject.interview;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Fibonacci {
+	
+	private static Map<Integer, Integer> cache = new HashMap<Integer, Integer>();
 
 	public static void main(String[] args) {
 		
@@ -9,6 +14,7 @@ public class Fibonacci {
 		
 		System.out.println(fibonacciRecur(10));
 		System.out.println(fibonacci(10));
+		System.out.println(fibonacciMemo(10));
 
 	}
 
@@ -29,8 +35,20 @@ public class Fibonacci {
 			fib = fib1 + fib2;
 			fib1 = fib2;
 			fib2 = fib;
-
 		}
+		
+		return fib;
+	}
+	
+	private static int fibonacciMemo(int n) {
+		Integer fib = cache.get(n);
+		
+		if (fib != null) {
+			return fib;
+		}
+		
+		fib = fibonacci(n);
+		cache.put(n, fib);
 		
 		return fib;
 	}
