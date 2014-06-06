@@ -15,6 +15,7 @@ public class Fibonacci {
 		System.out.println(fibonacciRecur(10));
 		System.out.println(fibonacci(10));
 		System.out.println(fibonacciMemo(10));
+		System.out.println(fib(10));
 
 	}
 
@@ -51,5 +52,9 @@ public class Fibonacci {
 		cache.put(n, fib);
 		
 		return fib;
+	}
+	
+	private static long fib(int n) {
+		return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 	}
 }
