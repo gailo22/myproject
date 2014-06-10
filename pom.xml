@@ -162,8 +162,10 @@
 				</executions>
 				<configuration>
 					<packageName>myproject.serialize</packageName>
+					<!--  
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
+					-->
 				</configuration>
 			</plugin>
 		</plugins>
