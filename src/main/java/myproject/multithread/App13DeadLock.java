@@ -4,7 +4,7 @@ public class App13DeadLock {
 
 	public static void main(String[] args) {
 		
-		App13Runner runner = new App13Runner();
+		final App13Runner runner = new App13Runner();
 		
 		Thread t1 = new Thread(new Runnable() {
 

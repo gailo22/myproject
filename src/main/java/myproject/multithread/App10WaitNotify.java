@@ -4,7 +4,7 @@ public class App10WaitNotify {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		App10Processor processor = new App10Processor();
+		final App10Processor processor = new App10Processor();
 		
 		Thread t1 = new Thread(new Runnable() {
 

@@ -4,7 +4,7 @@ public class App12ReentrantLock {
 
 	public static void main(String[] args) {
 		
-		App12Runner runner = new App12Runner();
+		final App12Runner runner = new App12Runner();
 		
 		Thread t1 = new Thread(new Runnable() {
 
