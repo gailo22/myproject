@@ -120,6 +120,11 @@
 	      <version>2.2.4</version>
 	      <scope>compile</scope>
 	    </dependency>
+	    <dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -173,6 +178,11 @@
 					<clearOutputDir>false</clearOutputDir>
 					-->
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
 			</plugin>
 		</plugins>
 	</build>
