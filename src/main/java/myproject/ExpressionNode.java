@@ -57,7 +57,7 @@ public class ExpressionNode {
 	
 	
 
-	//- Part 1 – Design and implement the classes to represent expression trees 
+	// Part 1 Design and implement the classes to represent expression trees 
 	// Example 1:
     //	        + 
     //	    -     x 
