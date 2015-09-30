@@ -1,6 +1,5 @@
 package myproject;
 
-import java.util.Scanner;
 
 public class Expr1 {
 

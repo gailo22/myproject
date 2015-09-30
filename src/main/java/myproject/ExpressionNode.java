@@ -12,6 +12,12 @@ public class ExpressionNode {
 		this.value = value;
 	}
 	
+	ExpressionNode(String value, ExpressionNode left, ExpressionNode right) {
+		this.value = value;
+		this.left = left;
+		this.right = right;
+	}
+	
 	
 	// to keep values in tree when do postorder transversal
 	static Stack<Integer> values = new Stack<Integer>();
@@ -73,30 +79,20 @@ public class ExpressionNode {
     	
     	// Ex 1.
     	// (2 - 1) + (2 x (4 / 2)) ---> 5
-    	ExpressionNode node = new ExpressionNode("+");
-        node.left = new ExpressionNode("-");
-        node.right= new ExpressionNode("x");
-        
-        node.left.left = new ExpressionNode("2");
-        node.left.right= new ExpressionNode("1");
-        
-        node.right.left = new ExpressionNode("2");
-        node.right.right= new ExpressionNode("/");
-        
-        node.right.right.left = new ExpressionNode("4");
-        node.right.right.right= new ExpressionNode("2");
+    	ExpressionNode node = new ExpressionNode("+", new ExpressionNode("-", new ExpressionNode("2"), 
+    			                                                              new ExpressionNode("1")),
+    			                                      new ExpressionNode("x", new ExpressionNode("2"), 
+    			                                    		                  new ExpressionNode("/", new ExpressionNode("4"), 
+    			                                    		                                          new ExpressionNode("2"))));
         
         evaluate(node);
         System.out.println("Ex 1. ==> " + values.pop());
     	
     	// Ex 2.
         // (2 - 1) + 4 --> 5
-    	node = new ExpressionNode("+");
-        node.left = new ExpressionNode("-");
-        node.right= new ExpressionNode("4");
-        
-        node.left.left = new ExpressionNode("2");
-        node.left.right= new ExpressionNode("1");
+    	node = new ExpressionNode("+", new ExpressionNode("-", new ExpressionNode("2"), 
+    			                                               new ExpressionNode("1")), 
+    			                       new ExpressionNode("4"));
         
         evaluate(node);
         System.out.println("Ex 2. ==> " + values.pop());
