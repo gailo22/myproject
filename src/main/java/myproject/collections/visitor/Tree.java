@@ -16,7 +16,7 @@ abstract class Tree<E> {
 
 			@Override
 			public Double sum() {
-				return ((Double) e).doubleValue();
+				return ((Number) e).doubleValue();
 			}
 		};
 	}
@@ -40,6 +40,7 @@ abstract class Tree<E> {
 		Tree<Integer> t = Tree.branch(Tree.branch(Tree.leaf(1), Tree.leaf(2)), Tree.leaf(3));
 
 		System.out.println(t);
+		System.out.println(t.sum());
 	}
 
 }
