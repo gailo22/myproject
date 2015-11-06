@@ -14,6 +14,13 @@ public class RegexTest1 {
 		List<String> tokens = getTokens(str, "(?i)\\w+'{0,1}\\w+");
 		
 		System.out.println(tokens);
+		
+		
+		String ints = "1+2-3 * 10 / 24";
+		tokens = getTokens(ints, "[0-9]+|[\\+\\-\\*/]");
+		
+		System.out.println(tokens);
+		
 	}
 	
 	static List<String> getTokens(String text, String pattern) {
