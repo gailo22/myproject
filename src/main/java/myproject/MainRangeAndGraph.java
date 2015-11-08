@@ -11,10 +11,6 @@ import java.util.Queue;
 import java.util.Random;
 import java.util.Stack;
 
-import com.google.common.collect.ContiguousSet;
-import com.google.common.collect.DiscreteDomain;
-import com.google.common.collect.Range;
-
 public class MainRangeAndGraph {
     
     public static void main(String[] args) {
@@ -34,11 +30,11 @@ public class MainRangeAndGraph {
             System.out.println("s: " + s);
         }
         
-        Range<Integer> range = Range.closed(1, 10);
-
-        for (int r : ContiguousSet.create(range, DiscreteDomain.integers())) {
-            System.out.println("r: " + r);
-        }
+//        Range<Integer> range = Range.closed(1, 10);
+//
+//        for (int r : ContiguousSet.create(range, DiscreteDomain.integers())) {
+//            System.out.println("r: " + r);
+//        }
         
         Iterable<Path> dirs = FileSystems.getDefault().getRootDirectories();
         for (Path name: dirs) {

@@ -5,8 +5,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javax.persistence.criteria.CriteriaBuilder.In;
-
 public class Graph {
 
     // symbol table: key = string vertex, value = set of neighboring vertices
@@ -25,7 +23,7 @@ public class Graph {
    /**
      * Create an graph from given input stream using given delimiter.
      */
-    public Graph(In in, String delimiter) {
+//    public Graph(In in, String delimiter) {
 //        st = new HashMap<String, Set<String>>();
 //        while (in.hasNextLine()) {
 //            String line = in.readLine();
@@ -34,7 +32,7 @@ public class Graph {
 //                addEdge(names[0], names[i]);
 //            }
 //        }
-    }
+//    }
 
    /**
      * Number of vertices.
@@ -116,7 +114,8 @@ public class Graph {
    /**
      * Return a string representation of the graph.
      */
-    public String toString() {
+    @Override
+	public String toString() {
         StringBuilder s = new StringBuilder();
         for (String v : st.keySet()) {
             s.append(v + ": ");

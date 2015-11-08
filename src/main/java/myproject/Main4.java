@@ -1,5 +1,6 @@
 package myproject;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main4 {
@@ -15,6 +16,11 @@ public class Main4 {
 				System.out.println(next);
 			}
 		}
+		String s = "He is a very very good boy, isn't he?";
+		
+		String[] s1 = expStr.split("[A-Za-z !,?.\\_'@]+");
+		
+		System.out.println(Arrays.asList(s1));
 	}
 
 }
