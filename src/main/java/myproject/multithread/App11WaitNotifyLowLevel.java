@@ -3,9 +3,9 @@ package myproject.multithread;
 public class App11WaitNotifyLowLevel {
 
 	public static void main(String[] args) throws InterruptedException {
-		
-		App11Processor processor = new App11Processor();
-		
+
+		final App11Processor processor = new App11Processor();
+
 		Thread t1 = new Thread(new Runnable() {
 
 			@Override

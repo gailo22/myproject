@@ -27,11 +27,31 @@ public class Main {
 		sort(a);
 		System.out.println(Arrays.toString(a));
 		
-		
 	}
 
 	private static void sort(int[] a) {
-		
+		quicksort(a, 0, a.length - 1);
+	}
+
+	private static void quicksort(int[] a, int left, int right) {
+		if (left < right - 1) {
+			int pivot = left + right >> 1;
+			pivot = partition(a, left, right, pivot);
+			quicksort(a, left, pivot);
+			quicksort(a, pivot + 1, right);
+		}
+	}
+
+	private static int partition(int[] a, int left, int right, int pivot) {
+		int pivotValue = a[pivot];
+		swap(a, pivot, --right);
+		for (int i = left; i < right; ++i) {
+			if (a[i] < pivotValue) {
+				swap(a, i, left++);
+			}
+		}
+		swap(a, left, right);
+		return left;
 	}
 
 	private static void swap(int[] a, int i, int j) {
@@ -39,8 +59,4 @@ public class Main {
 		a[i] = a[j];
 		a[j] = tmp;
 	}
-
-	
-
-
 }

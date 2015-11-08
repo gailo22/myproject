@@ -3,9 +3,9 @@ package myproject.multithread;
 public class App14TryLock {
 
 	public static void main(String[] args) {
-		
-		App14Runner runner = new App14Runner();
-		
+
+		final App14Runner runner = new App14Runner();
+
 		Thread t1 = new Thread(new Runnable() {
 
 			@Override
@@ -39,8 +39,8 @@ public class App14TryLock {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		
+
+
 		runner.finished();
 	}
 
