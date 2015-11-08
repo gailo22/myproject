@@ -1,21 +1,18 @@
 package myproject.concurrent;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import javax.annotation.concurrent.GuardedBy;
-import javax.annotation.concurrent.ThreadSafe;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
-
-@ThreadSafe
+//@ThreadSafe
 public class PrimeGenerator implements Runnable {
 	private static ExecutorService exec = Executors.newCachedThreadPool();
 
-	@GuardedBy("this")
+//	@GuardedBy("this")
 	private final List<BigInteger> primes = new ArrayList<BigInteger>();
 
 	private volatile boolean cancelled;

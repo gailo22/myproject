@@ -37,6 +37,7 @@ public class VisitorTreeClient {
 				VisitorTree.leaf(3));
 
 		System.out.println(toString(t));
+		System.out.println(sum(t));
 	}
 
 }
