@@ -1,5 +1,11 @@
 package myproject;
 
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,17 +15,11 @@ import java.util.Set;
 
 import javax.ws.rs.core.MediaType;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
-
-import static org.hamcrest.core.IsEqual.equalTo;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -52,6 +52,7 @@ public class AppTest {
 		return STRING;
 	}
 	
+	@Ignore
 	@Test
 	public void shouldPassForTest2() {
 		App app = new App();
