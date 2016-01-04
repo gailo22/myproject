@@ -55,12 +55,12 @@ public class SortedValuesInMap {
 		Entry<String, Integer> first = iterator.next();
 		Entry<String, Integer> second = iterator.next();
 
-		return Arrays.asList(new String[] { first.getKey(), second.getKey() });
+		return Arrays.asList(first.getKey(), second.getKey());
 	}
 
 	private static List<String> getTwoMaxKeys(Map<String, Integer> map) {
 
-		List<Integer> list = new ArrayList<>(2);
+		List<Integer> list = new ArrayList<>();
 		list.addAll(map.values());
 
 		Collections.sort(list);
@@ -70,7 +70,6 @@ public class SortedValuesInMap {
 		String maxKey = null;
 		String secondMaxKey = null;
 
-		List<String> result = new ArrayList<>();
 		for (Map.Entry<String, Integer> e : map.entrySet()) {
 			if (maxValue.equals(e.getValue())) {
 				maxKey = e.getKey();
@@ -80,10 +79,7 @@ public class SortedValuesInMap {
 			}
 		}
 
-		result.add(maxKey);
-		result.add(secondMaxKey);
-
-		return result;
+		return Arrays.asList(maxKey, secondMaxKey);
 
 	}
 
