@@ -29,6 +29,12 @@ public class Parent {
 
 		final Parent child = new Child();
 		child.aa();
+		
+		child.hello();
+	}
+	
+	public static void hello() {
+		System.out.println("Hello from Parent");
 	}
 
 //	parent.a()

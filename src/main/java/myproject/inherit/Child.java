@@ -9,4 +9,8 @@ public class Child extends Parent {
 		return this;
 	}
 
+	//@Override
+	public static void hello() {
+		System.out.println("Hello from Child");
+	}
 }
