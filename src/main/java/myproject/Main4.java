@@ -21,6 +21,14 @@ public class Main4 {
 		String[] s1 = expStr.split("[A-Za-z !,?.\\_'@]+");
 		
 		System.out.println(Arrays.asList(s1));
+		
+		
+		String values = "param1\nparam2\nparam3";
+		String[] split = values.split("\n");
+		
+		for (String s2 : split) {
+			System.out.println("s2: " + s2);
+		}
 	}
 
 }
