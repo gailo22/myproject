@@ -32,6 +32,10 @@ public class BinaryTest {
 				return Integer.toHexString(input);
 			}
 		}));
+		
+		System.out.println("oct: " + toString(bs, (input) -> input.toString()));
+		System.out.println("binary: " + toString(bs, Integer::toBinaryString));
+		System.out.println("hex: " + toString(bs, Integer::toHexString));
 
 	}
 
