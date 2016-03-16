@@ -14,7 +14,7 @@ public class Customer {
     	CustomerBuilder builder = new CustomerBuilder();
     	builder.id(123).firstName("Hello");
     	
-    	System.out.println(builder.build());
+    	System.out.println(builder.build()); 
     }
 
 }
