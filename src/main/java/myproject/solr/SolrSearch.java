@@ -13,7 +13,7 @@ public class SolrSearch {
 
 	public static void main(String[] args) throws Exception {
 		// solr run inside a docker container
-		String urlString = "http://192.168.99.100:32768/solr/gettingstarted";
+		String urlString = "http://192.168.99.100:32777/solr/gettingstarted";
 		SolrClient solr = new HttpSolrClient(urlString);
 		
 		
