@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 import com.google.common.collect.ImmutableList;
 
-public class ListF<T> implements Functor<T> {
+public class ListF<T> implements Functor<T, ListF<?>> {
 
 	private final ImmutableList<T> list;
 	 
@@ -14,7 +14,7 @@ public class ListF<T> implements Functor<T> {
     }
     
 	@Override
-	public <R> Functor<R> map(Function<T, R> f) {
+	public <R> ListF<R> map(Function<T, R> f) {
 		ArrayList<R> result = new ArrayList<R>(list.size());
         for (T t : list) {
             result.add(f.apply(t));

@@ -1,9 +1,11 @@
 package myproject.regex;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class RegexTest1 {
 
@@ -32,6 +34,11 @@ public class RegexTest1 {
 		tokens = getTokens(str3, "[^.!?]+");
 		
 		System.out.println("Sentences: " + tokens);
+		
+		String url = "/Ind/{userId}/resume-info/{resumeId}/name";
+		
+		System.out.println(Arrays.asList(url.split("\\{(.*?)\\}")).stream().collect(Collectors.toList()));
+		System.out.println(url.replaceAll("\\{(.*?)\\}", "XX"));
 		
 	}
 	

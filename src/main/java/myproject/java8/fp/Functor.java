@@ -3,7 +3,7 @@ package myproject.java8.fp;
 import java.util.function.Function;
 
 @FunctionalInterface
-public interface Functor<T> {
+public interface Functor<T, F extends Functor<?, ?>> {
 
 	/**
 	 * f.apply(x)
@@ -14,6 +14,6 @@ public interface Functor<T> {
 	 * 
 	 * Call x a functor
 	 */
-	<R> Functor<R> map(Function<T, R> f);
+	<R> F map(Function<T, R> f);
 	
 }

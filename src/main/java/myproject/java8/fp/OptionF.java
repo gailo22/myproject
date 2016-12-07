@@ -2,7 +2,7 @@ package myproject.java8.fp;
 
 import java.util.function.Function;
 
-public class OptionF<T> implements Functor<T> {
+public class OptionF<T> implements Functor<T, OptionF<?>> {
 
 	private final T valueOrNull;
 
