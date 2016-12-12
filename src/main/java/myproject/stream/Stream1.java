@@ -1,7 +1,10 @@
 package myproject.stream;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -42,7 +45,29 @@ public class Stream1 {
 		               		    Collectors.mapping(Function.identity(), 
 		               				               Collectors.toList())));
 		System.out.println(groupByAge);
-	
+		
+		Person findPerson = people.stream()
+		      .filter(p -> p.getAge() == 20)
+		      .findFirst()
+		      .orElse(null);
+		
+		System.out.println("found: " + findPerson);
+		
+		Person notFoundPerson = people.stream()
+			      .filter(p -> p.getAge() == 60)
+			      .findFirst()
+			      .orElse(null);
+			
+		System.out.println("not found: " + notFoundPerson);
+		      
+		List<String> listOfStuff = null;
+		List<String> listOfStuffFiltered = Optional.ofNullable(listOfStuff)
+              .orElseGet(Collections::emptyList)
+              .stream()
+              .filter(Objects::nonNull)
+              .collect(Collectors.toList());
+		
+		System.out.println(listOfStuffFiltered);
 	}
 	
 	static class Person {
