@@ -18,7 +18,7 @@ public class ReadJsonFromUrl {
 	public static void main(String[] args) throws IOException {
 		JsonObject readJsonFromUrl = readJsonFromUrl("http://kuderbackend:8099/kuderind/Swagger/docs/v1?api_key=dLowCJs2G48v6A==");
 		
-		//printEndpoints(readJsonFromUrl);
+		printEndpoints(readJsonFromUrl);
 		printDefinitions(readJsonFromUrl);
 	}
 	
