@@ -1,8 +1,8 @@
 package myproject.closure;
 
 @FunctionalInterface
-public interface Pred<A> {
-
-	boolean m(A x);
+public interface Func2<B, A> {
+	
+	List<B> m(A a);
 
 }

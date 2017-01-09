@@ -38,4 +38,19 @@ public class List<T> {
 
 		return ans;
 	}
+	
+	static <A> List<A> concat(List<A> xs, List<A> ys) {
+		if (xs == null) {
+			return ys;
+		}
+		
+		return new List<A>(xs.head, concat(xs.tail, ys));
+	}
+	
+	static <A, B> List<B> flatMap(Func2<B, A> f, List<A> xs) {
+		if (xs == null) {
+			return null;
+		}
+		return concat(f.m(xs.head), flatMap(f, xs.tail));
+	}
 }
