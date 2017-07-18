@@ -13,6 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<powermock.version>1.4.10</powermock.version>
+		<src.dir>src/main/java</src.dir>
 	</properties>
 
 	<dependencies>
@@ -138,7 +139,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.8</version>
+			<version>1.16.18</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -182,7 +183,7 @@
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
 		    <version>3.1.0</version>
-		    <scope>provide</scope>
+		    <scope>provided</scope>
 		</dependency>
 		
 		<dependency>
@@ -200,6 +201,17 @@
       </dependencies>
       
 	<build>
+	    <sourceDirectory>${src.dir}</sourceDirectory>
+	    <pluginManagement>
+	        <plugins>
+	            <plugin>
+	                <groupId>org.projectlombok</groupId>
+	                <artifactId>lombok-maven-plugin</artifactId>
+	                <version>1.16.8.0</version>
+	            </plugin>
+	        </plugins>
+	    </pluginManagement>
+    
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -278,6 +290,26 @@
                 </execution>
               </executions>
             </plugin>
+            <plugin>
+			    <groupId>org.projectlombok</groupId>
+			    <artifactId>lombok-maven-plugin</artifactId>
+			    <version>1.16.8.0</version>
+			    <configuration>
+			        <encoding>UTF-8</encoding>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <phase>generate-sources</phase>
+			            <goals>
+			                <goal>delombok</goal>
+			            </goals>
+			            <configuration>
+	                        <sourceDirectory>src/main/java</sourceDirectory>
+	                        <addOutputDirectory>false</addOutputDirectory>
+	                    </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
 		</plugins>
 	</build>
 	<reporting>
@@ -289,4 +321,13 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	
+	<profiles>
+	    <profile>
+	        <id>lombok-build</id>
+	        <properties>
+	            <src.dir>${project.build.directory}/generated-sources/delombok</src.dir>
+	        </properties>
+	    </profile>
+	</profiles>
 </project>
